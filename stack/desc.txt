@@ -1,0 +1,11 @@
+A stack is a linear data structure that follows the principle of LIFO. Basic operations of a stack include:
+- Push
+- Pop
+- IsEmpty
+- IsFull
+- Peek
+
+Applications of stack data structure:
+- To reverse a string
+- In compilers to calculate mathematical expresssions
+- In browsers to store visited links (back button)
