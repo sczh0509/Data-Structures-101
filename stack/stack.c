@@ -68,13 +68,20 @@ void	pop(st *s)
 void	printStack(st *s)
 {
 	int i;
-
-	i = 0;
-	printf("Stack is made up of: \n");
-	while (i <= s->top)
+	
+	if (isempty(s))
 	{
-		printf("%d\n", s->items[i]);
-		i++;
+		printf("Stack is empty.\n");
+	}
+	else
+	{
+		i = 0;
+		printf("Stack is made up of: \n");
+		while (i <= s->top)
+		{
+			printf("%d\n", s->items[i]);
+			i++;
+		}
 	}
 }
 
@@ -84,6 +91,7 @@ int	main(void)
 	st *s;
 	s = malloc(sizeof(sizeof(st)));
 	createEmptyStack(s);
+	printStack(s);
 	push(s, 2);
 	push(s, 4);
 	push(s, 8);
@@ -94,4 +102,7 @@ int	main(void)
 
 	printf("After popping.\n");
 	printStack(s);
+	free(s);
+
+	return (0);
 }
