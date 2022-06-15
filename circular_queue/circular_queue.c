@@ -86,10 +86,52 @@ int	deQueue(cq *c)
 // display queue elements
 void	display(cq *c)
 {
+	int	i;
+
 	if (isempty(c))
 	{
 		printf("Queue is empty.\n");
 	}
 	else
 	{
-`
+		printf("\n Front -> %d ", c->front);
+		printf("\n Items -> ");
+		for (i = c->front; i != c->rear; i = (i + 1) % SIZE)
+		{
+			printf("%d ", c->items[i]);
+		}
+		printf("%d ", c->items[i]);
+		printf("\n Rear -> %d \n", c->rear);
+	}
+}
+
+int	main()
+{
+	cq 	*c;
+	int	i;
+
+	c = malloc(sizeof(cq));
+
+	// create empty queue
+	createEmptyQueue(c);
+
+	// will fail because queue is empty
+	deQueue(c);
+	
+	for (i = 1; i <= 5; i++)
+	{
+		enQueue(c, i);
+	}
+	
+	// will fail to enqueue because queue is full
+	enQueue(c, 6);
+
+	display(c);
+	deQueue(c);
+	display(c);
+	enQueue(c, 7);
+	display(c);
+
+	return (0);
+}
+
