@@ -1,0 +1,8 @@
+A regular queue has its limitations. As we enqueue and dequeue, the front pointer  moves up gradually, effectively reducing the size of the queue. In a regular queue, we can only store elements in the empty spaces once the queue has been reset (all elements were dequeued).
+
+This is implemented via a circular queue.
+- works by the process of circular increment (when we try to increment the pointer and we reach the end of the queue, we start from the beginning fo the queue again)
+- circular increment is implemented by modulo division with queue size
+
+
+"if REAR + 1 == OVERFLOW, REAR = (REAR + 1) % Q_SIZE)"
