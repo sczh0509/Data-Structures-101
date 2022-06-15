@@ -132,6 +132,7 @@ int	main()
 	enQueue(c, 7);
 	display(c);
 
+	free(c);
 	return (0);
 }
 
